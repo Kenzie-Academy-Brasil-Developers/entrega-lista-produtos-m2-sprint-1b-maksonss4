@@ -4,52 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Now</title>
     <link rel="stylesheet" href="./src/css/reset.css">
     <link rel="stylesheet" href="./src/css/style.css">
-    <title>Lista de Produtos</title>
 </head>
 <body>
-
-    <!-- CABEÇALHO -->
     <header>
-        <div id="filters" class="filtersContainer">
-            
-            <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos">Mostrar Todos</button>
-            <button class="estiloGeralBotoes estiloGeralBotoes--filtrarHortifruti">Mostrar Hortifruti</button>
-
-            <div class="containerBuscaPorNome">
+        <h1>Shop now</h1>
+        <div class="containerHeader">
+            <ul>
+                <li><button class="btTodos">Todos Produtos</button></li>
+                <li><button class="btHortifruti">Hortifruti</button></li>
+                <li><button class="btPanificadora">Panificadora</button></li>
+                <li><button class="btLaticinios">Laticínio</button></li>
+            </ul>
+            <div class="container__input">
                 
-                <input type="text" placeholder="Nome do produto" class="campoBuscaPorNome">
-                <button class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome">Buscar</button>
-
+                <input type="text" id="input" placeholder="Pesquisar por"> 
+                <button class="btnDoInput"><img src="./src/img/search.png" alt="">
+                </button>
+                
             </div>
         </div>
+        
+             
     </header>
-    
+
     <main>
-        <div class="containerListaProdutos" id="listProdutos">
-            <ul>
-            <!-- Utilize esse item html como template para a construção da lista de produtos -->
+        <ul class="containerCards">
+            
+        </ul>
 
-            <!-- Você pode remover esses comentários depois que fizer a construção pelo DOM -->
+        <div class="containerCarrinho">
+            <div class="carrinhoTitulo">
+                <img src="./src/img/carrinho.png" alt="">
+                <h2>carrinho</h2>
+            </div>
+            
+            <div class="carrinho">
+                <div class="carrinhoVazio">
+                    <img src="./src/img/imgCarrinhoVazio.png" alt="">
+                    <p>Por enquanto não temos produtos no carrinho</p>
+                </div>
+            </div>
 
-            <!--
-                <li>
-                    <img src="./src/img/maça.png" alt="Imagem maçã">
-                    <h3>Maçã</h3>
-                    <p>R$02.00</p>
-                    <span>Seção - Hortifruti</span>
-                </li>
-            -->
-            </ul>
-        </div>
-
-        <div class="containerPrecoTotal">
-            <p>Preço total: R$<span id="precoTotal">00.00</span></p>
         </div>
     </main>
-
-    <script src="src/js/dataProdutos.js"></script>
-    <script src="src/js/script.js"></script>
+    <script src="./src/js/dataProdutos.js"></script>
+    <script src="./src/js/script.js"></script>
 </body>
 </html>

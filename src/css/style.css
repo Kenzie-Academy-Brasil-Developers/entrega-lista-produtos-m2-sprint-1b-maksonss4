@@ -1,107 +1,411 @@
-body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+:root {
+    --black: #212529;
+    --verde: #12B886;
+    --verdeClaro: rgba(18, 184, 134, 0.05);
+    --cinza: #868E96;
+    --cinzaClaro: #F1F3F5;
+    --cinzaMedio: #D1D1D2;
 }
 
-/* CABEÇALHO */
-.filtersContainer {
+body{
+    width: 100vw;
+    height: 100vh;
+    margin-left: 20px;
+    
+}
+
+header{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    padding: 30px;
+    gap: 30px;
+    width: 100%;
 }
 
-.estiloGeralBotoes{
-    border: none;
+header h1{
+    font-size: 1.25rem;
     font-weight: bold;
-    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.containerHeader{
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;   
+}
+
+.containerHeader ul{
+    display: flex;
+    overflow-x: scroll;
+    gap: 20px;
+    padding-right: 20px;
+}
+
+.containerHeader ul::-webkit-scrollbar{
+    height: 6px;
+    background-color: #ffffff;
+}
+
+.containerHeader ul::-webkit-scrollbar-thumb{
+    background-color: var(--cinzaMedio);
+    border-radius: 10px;
+}
+
+.btTodos{
+    white-space: nowrap;
+}
+
+.containerHeader ul button{
+    margin-bottom: 12px;
     padding: 10px 20px;
+    background: var(--verdeClaro);
+    border: 1.5px solid var(--verdeClaro);
+    border-radius: 8px;       
+    color: var(--verde);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.containerHeader ul button:focus{
+    background-color: var(--verde);
+    color: var(--cinzaClaro);
+    transition: .4s;
+}
+
+.containerHeader ul button:hover{
+    transition: .4s;
     cursor: pointer;
-    display: block;
-    font-size: 0.9rem;
+    background-color: var(--verde);
+    color: var(--cinzaClaro);
 }
 
-.estiloGeralBotoes--mostrarTodos {
-    color: black;
-    background-color: #d3d3d3;
-}
-
-.estiloGeralBotoes--filtrarHortifruti {
-    background-color: tomato;
-    color: white;
-}
-
-.containerBuscaPorNome {
+.container__input{
+    width: 100%;
+    max-width: 605.5px;
     display: flex;
     justify-content: space-between;
+    padding-right: 20px;    
 }
 
-.campoBuscaPorNome {
-    border-radius: 5px 0 0 5px;
-    border: 1px solid black;
-    padding: 0 10px;
+.container__input input{
+    width: 60vw;
+    height: 5vh;
+    max-height: 35px;
+    min-height: 30px;
+    border: 0;
+    background-color: var(--cinzaClaro);    
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
-.estiloGeralBotoes--botaoBuscaPorNome {
-    background-color: rgb(17, 17, 20);
-    color: white;
-    border-radius: 0 5px 5px 0;
+.container__input button{
+    background-color: var(--verde);
+    border: 0;
+    border-radius: 8px;
+    width: 50px;
 }
 
-/* CONTEÚDO */
-main{}
+.container__input button:hover{
+    background-color: #32d6a5;
+    transition: .5s;
+    cursor: pointer;
+}
 
-.containerListaProdutos {
+main{
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-.containerListaProdutos ul {
-    list-style: none;
-    text-align: center;
+main ul{
     display: flex;
-    justify-content: center;
+    overflow-x: scroll;
+    padding-right: 20px;
+    gap: 30px;
+    min-height: 30vh;
 }
 
-.containerListaProdutos ul li {
-    color: black;
+main ul::-webkit-scrollbar{
+    height: 10px;
+    background-color: #ffffff;
+}
+
+
+main ul::-webkit-scrollbar-thumb{
+    background-color: var(--cinzaMedio);
+    border-radius: 10px;
+}
+
+.liDaUl{
+    padding-bottom: 10px;    
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.liDaUl img{
+    width: 230px;
+}
+
+.liDaUl h3{
+    font-size: 1.25rem;
     font-weight: bold;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 5px;
-    transition: ease-in-out .1s;
-    width: 20%;
 }
 
-.containerListaProdutos ul li:hover {
-    box-shadow: 3px 3px 13px 1px rgb(146 146 146);
+.liDaUl div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.containerListaProdutos ul li img {
+.liDaUl div p{
+    font-weight: bold;
+}
+
+.liDaUl div button{
+    background: var(--verdeClaro);
+    border: 1.5px solid var(--verdeClaro);
+    border-radius: 8px;
+    color: var(--verde);
+}
+
+.liDaUl div button:hover{
+    background-color: var(--verde);
+    color: var(--cinzaClaro);
+    transition: .4s;
+    cursor: pointer;
+}
+
+.colorCinza{
+    color: var(--cinza);
+}
+
+.containerCarrinho{
+    margin-top: 20px;
+    width: 93vw;
+}
+
+.carrinhoTitulo{
+    display: flex;
+    background-color: var(--verde);
     width: 100%;
-    max-width: 80px;
+    height: 35px;
+    border-radius: 8px 8px 0 0;
+    align-items: center;
+    gap: 10px;
+    color: var(--cinzaClaro);
+    font-size: 1.25rem;
 }
 
-.containerListaProdutos ul li h3 {
-    font-size: 1.5rem;
+.carrinhoTitulo img{
+    max-width: 20px;
+    max-height: 20px;
+    margin-left: 20px;
 }
 
-.containerListaProdutos ul li p {
-    font-size: 1.5rem;
-}
-.containerListaProdutos ul li span {
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-top: 10px;
-    display: inline-block;
+.carrinho{
+    width: 100%;
+    height: 20vh;
+    overflow-y: scroll;
 }
 
-/* PREÇO TOTAL */
-.containerPrecoTotal{
+.carrinho::-webkit-scrollbar{
+    height: auto;
+    width: 10px;
+    background-color: #ffffff;
+}
+
+.carrinho::-webkit-scrollbar-thumb{
+    background-color: var(--cinzaMedio);
+    border-radius: 10px;
+}
+
+.carrinhoVazio{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--cinzaClaro);
+    border-radius: 0 0 8px 8px;
+}
+
+.carrinhoVazio img{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.carrinhoVazio p{
+    color: var(--cinza);
+    padding: 0 70px;
     text-align: center;
 }
-.containerPrecoTotal p{
-    font-size: 1.4rem;
-    font-weight: 600;
+
+.itemDoCarrinho{
+    display: flex;
+    padding: 5px 0;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--cinza);
 }
-.containerPrecoTotal p span{}
+
+.divImgDiv{
+    display: flex;
+}
+
+.divImgDiv img {
+    width: 35%;
+}
+
+.divInfItemCar{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.divInfItemCar h3{
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.divInfItemCar p{
+    font-weight: 500;
+}
+
+.imgButtonRemov{
+    height: 25px;
+    padding: 5px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.imgButtonRemov:hover{
+    cursor: pointer;
+    transition: .4s;
+    background-color: rgba(255, 0, 0, 0.519);
+}
+
+.divQeP{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;    
+    border-radius: 8px;    
+}
+
+.divQeP p{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.25rem;
+    padding: 20px;
+    border-radius: 8px;    
+}
+
+.pQuantidade{
+    background-color: var(--cinzaClaro);    
+}
+
+@media (max-width: 1023px){
+    .liDaUl ol{
+            display: none;
+        }
+}
+
+@media (min-Width: 1023px) {
+    body{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+    }
+
+    header{
+        width: 75%;
+    }
+
+    header h1{
+        text-align: center;
+        width: 100%;
+        box-shadow: 0px 4px 40px -20px rgba(0, 0, 0, 0.25);
+    }
+
+    .containerHeader{
+        flex-direction: row;        
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .containerHeader ul{
+        width: 55%;
+        gap: 10px;
+        padding: 0;
+        overflow: unset;
+    }
+
+    .containerHeader ul li button{
+        padding: 8px;
+        margin: 0;
+    }
+
+    .container__input{
+        width: 40%;
+        padding: 0;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .container__input input{
+        max-width: 80%;
+        min-height: 0;
+        max-height: 9999px;
+    }
+
+    .container__input button{
+        padding: 0;
+        width: 13%;
+        height: 44px;
+        max-width: 60px;
+    }
+
+    main{
+        display: flex;
+        width: 75%;
+        justify-content: space-between;
+    }
+
+    main ul{
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: unset;
+        width: 70%;
+        padding: 0;
+        gap: 10px;
+        min-height: unset;
+    }
+
+    .liDaUl{
+        gap: 10px;
+        padding: 0;
+        justify-content: space-between;
+    }
+
+    .lidaUl h3{
+        margin: 10px 0;
+    }
+
+    .liDaUl img{
+        width: 210px;
+        max-height: 131px;
+    }
+
+    .containerCarrinho{
+        width: 27%;
+        margin: 0;
+        padding: 0;
+    }   
+}

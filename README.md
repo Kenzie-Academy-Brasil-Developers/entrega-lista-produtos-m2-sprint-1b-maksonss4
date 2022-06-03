@@ -8,6 +8,8 @@ Nesta entrega, iremos trabalhar os conceitos de manipulação de DOM e iteraçã
 
 O objetivo desta entrega é utilizar a manipulação de DOM para montar uma lista de produtos com alguns filtros (como busca, filtro por seção "Hortifruti") e, por fim, mostrar todos os produtos.
 
+![Resultado esperado](./src/img/lista-frutas.gif)
+
 No projeto clonado você terá 3 arquivos, index.html, style.css e script.js.
 
 Não se preocupe com a parte de estilização, as classes já estão criadas, porém, sinta-se livre para alterar caso ache necessário.
@@ -133,8 +135,8 @@ function filtrarPorHortifruti() {
     const botaoMostrarHortifruti = document.querySelector('.estiloGeralBotoes--filtrarHortifruti');
 
     // Adicionando event listener de clique, e executando a função de filtro
+    botaoMostrarHortifruti.addEventListener('click', filtrarPorHortifruti);
 }
-   botaoMostrarHortifruti.addEventListener('click', filtrarPorHortifruti);
 ```
 
 E, por último, também precisaremos limpar a lista de produtos antes de criação de outra lista. Para isso, vamos adicionar mais uma linha de código no início da nossa função montarListaProdutos:
@@ -168,3 +170,6 @@ Por fim mas não menos importante, o cálculo do preço total. Note que o cálcu
 
 Agora que você já fez os pontos principais da entrega, sinta-se à vontade para criar mais tipos de filtros e deixar sua entrega ainda mais dinâmica.
 
+## Envio
+
+Faça o push do código para o seu repositório GitHub e implemente-o GitHub pages. No Canvas, por favor, envie sua url do GitHub Pages e envie o link do seu repositório nos comentários. Deixe o link do seu repositório como internal.

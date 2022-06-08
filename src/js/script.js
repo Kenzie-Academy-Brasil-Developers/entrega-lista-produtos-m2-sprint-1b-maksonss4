@@ -149,7 +149,7 @@ function criarCardPorSecao (listaDeProdutos, string) {
         return li.remove()
     })
 
-    if("TODOS PRODUTOS" === string.toUpperCase()){
+    if("TODOS PRODUTOS" === string.toUpperCase()){            
             return listarProdutos(listaDeProdutos)
         }
 
@@ -180,12 +180,13 @@ function criarCardPeloNome (listaDeProdutos, inputValue) {
         if(produto.nome.toUpperCase() === inputValue.toUpperCase()){
             return criarCard(produto)
         }
+        
     })
 }
 
 function criarCardPelaCategoria (listaDeProdutos, inputValue) {
     listaDeProdutos.forEach(produto => {
-        if(produto.categoria.toUpperCase() === inputValue.toUpperCase()){
+        if(produto.categoria.toUpperCase() === inputValue.toUpperCase() && inputValue.toUpperCase() !== produto.nome.toUpperCase()){
             return criarCard(produto)
         }
     })
